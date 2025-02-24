@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jagadish Sau" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta
+      name="description"
+      content="Promact Internship JavaScript Assignment"
+    />
+    <link rel="icon" type="image/x-icon" href="logo.svg" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script defer src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <title>Calculator - @jay-neo</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>Calculator</h2>
+      </div>
+      <div class="container-main">
+        <!-- A display area for showing the result or error messages -->
+        <div class="display-area">
+          <p id="result"></p>
+        </div>
+        <form id="calculator-form">
+          <!-- Two input fields for numbers (ensure only numeric values are accepted) -->
+          <input
+          type="number"
+            id="num1"
+            placeholder="Enter first number"
+            onkeydown="return blockInvalidInput(event)"
+            title="Maximum 7 decimal places allowed"
+            step="0.0000001"
+            required
+            />
+            <!-- A dropdown/select menu to choose an arithmetic operator (+, -, *, /) -->
+            <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+          </select>
+          <!-- Two input fields for numbers (ensure only numeric values are accepted) -->
+          <input
+            type="number"
+            id="num2"
+            placeholder="Enter second number"
+            onkeydown="return blockInvalidInput(event)"
+            title="Maximum 7 decimal places allowed"
+            step="0.0000001"
+            required
+          />
+          <!-- A button to trigger the calculation -->
+          <button type="submit">Calculate</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      function blockInvalidInput(event) {
+        if (event.key === "e" || event.key === "E" || event.key === "+") {
+          event.preventDefault();
+        }
+      }
+    </script>
+  </body>
+</html>

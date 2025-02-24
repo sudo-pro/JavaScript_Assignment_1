@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #000000;
+  font-family: Arial, sans-serif;
+  color: rgb(226, 221, 124);
+}
+.container {
+  height: 100vh;
+  flex-direction: column;
+  text-align: center;
+  width: 400px;
+}
+.header {
+  color: hsla(82, 100%, 54%, 1);
+  font-size: xx-large;
+  padding-top: 20px;
+  font-family: "Dancing Script", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+.footer {
+  padding-bottom: 10px;
+  font-family: "Dancing Script", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+.container-main {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+}
+.display-area {
+  min-width: 250px;
+  min-height: 40px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: hsla(169, 100%, 80%, 1);
+  border-radius: 8px;
+  color: #000000;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.display-area p#result:empty::before {
+  content: "";
+  color: #000000;
+}
+h2 {
+  margin-bottom: 15px;
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: hsla(5, 100%, 81%, 1);
+  border-radius: 4px;
+  font-size: 16px;
+}
+option {
+  font-weight: bold;
+}
+button {
+  background-color: hsla(49, 100%, 63%, 1);
+  color: blueviolet;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+button:hover {
+  background-color: #24e876;
+}
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
