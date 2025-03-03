@@ -29,16 +29,16 @@
         <form id="calculator-form">
           <!-- Two input fields for numbers (ensure only numeric values are accepted) -->
           <input
-          type="number"
+            type="number"
             id="num1"
             placeholder="Enter first number"
-            onkeydown="return blockInvalidInput(event)"
+            onkeydown="return blockInvalidInput(event, this.value)"
             title="Maximum 7 decimal places allowed"
             step="0.0000001"
             required
-            />
-            <!-- A dropdown/select menu to choose an arithmetic operator (+, -, *, /) -->
-            <select id="operator">
+          />
+          <!-- A dropdown/select menu to choose an arithmetic operator (+, -, *, /) -->
+          <select id="operator">
             <option value="+">+</option>
             <option value="-">-</option>
             <option value="*">*</option>
@@ -49,7 +49,7 @@
             type="number"
             id="num2"
             placeholder="Enter second number"
-            onkeydown="return blockInvalidInput(event)"
+            onkeydown="return blockInvalidInput(event, this.value)"
             title="Maximum 7 decimal places allowed"
             step="0.0000001"
             required
@@ -60,8 +60,16 @@
       </div>
     </div>
     <script>
-      function blockInvalidInput(event) {
-        if (event.key === "e" || event.key === "E" || event.key === "+") {
+      function blockInvalidInput(event, previousValue) {
+        const key = event.key;
+        console.log(typeof previousValue);
+        console.log(key, " === ", previousValue);
+        if (
+          key === "e" ||
+          key === "E" ||
+          key === "+" ||
+          (previousValue && previousValue != "-" && key === "-")
+        ) {
           event.preventDefault();
         }
       }
